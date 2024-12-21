@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #e5e5e5;
+        }
+        * {
+            box-sizing: border-box; transition: all 300ms;
+        }
+        header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 80px;
+            background-color: #202634;
+            box-shadow: 0px 0px 4px grey;
+            padding: 0 40px;
+        }
+        div.logo {
+            font-size: 26px;
+            color: #9cff00;
+        }
+        div.buttons-container {
+            display: flex;
+            flex-direction: row;
+        }
+        button {
+            display: block;
+            padding: 12px 20px 13px;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 6px;
+            border: none;
+        }
+        button:hover {
+            background-color: #b0f347;
+        }
+        div.feedback {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            cursor: pointer;
+        }
+        div.feedback span:first-child {
+            display: block;
+            color: #e5e5e5;
+            margin-bottom: 6px;
+            margin-top: 6px;
+        }
+        div.feedback span:last-child {
+            display: block;
+            background-color: #e5e5e5;
+            height: 2.4px;
+            width: 0px;
+            border-radius: 2px;
+        }
+        div.feedback:hover span:last-child {
+            width: calc(100% + 2px);
+        }
+        div.form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 500px;
+            min-height: 60px;
+            box-shadow: 0px 0px 4px grey;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px auto;
+        }
+        div.form input {
+            display: block;
+            width: 100%;
+            outline: none;
+            border: none;
+            height: 44px;
+            border-radius: 4px;
+            padding-bottom: 3px;
+            padding-left: 16px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type='text/babel'>
+        function App(){
+            return (
+                <>
+                <header>
+                    <div className={"logo"}>LOGO</div>
+                    <div className={"buttons-container"}>
+                        <button>About</button>
+                        <button>Contacts</button>
+                        <button>Working time</button>
+                    </div>
+                    <div className={"feedback"}>
+                        <span>Call</span>
+                        <span></span>    
+                    </div>
+                </header>
+                <main>
+                    <div className={"form"}>
+                        <input type="text" placeholder={"Enter you phone"} />    
+                        <input type="text" placeholder={"Enter you name"} />    
+                        <button>Send</button>
+                    </div>
+                </main>
+                </>
+            )
+        }
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+    </script>
+</body>
+</html>
